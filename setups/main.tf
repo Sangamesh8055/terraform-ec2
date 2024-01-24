@@ -7,7 +7,8 @@ resource "aws_vpc" "main" {
 }
 
 module "my_webserver" {
-  source = "../modules/webserver"
+  #source = "../modules/webserver"
+  source = "git::https://github.com/Sangamesh8055/terraform-ec2.git//modules/webserver"
   vpc_id = aws_vpc.main.id
   cidr_block = "10.0.0.0/16"
   server_name = "sang"
